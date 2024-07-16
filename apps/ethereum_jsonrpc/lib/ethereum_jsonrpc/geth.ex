@@ -184,11 +184,11 @@ defmodule EthereumJSONRPC.Geth do
   defp debug_trace_transaction_request(%{id: id, hash_data: hash_data}, only_first_trace) do
     debug_trace_timeout = Application.get_env(:ethereum_jsonrpc, __MODULE__)[:debug_trace_timeout]
 
-    request(%{
-      id: id,
-      method: "debug_traceTransaction",
-      params: [hash_data, %{timeout: debug_trace_timeout} |> Map.merge(tracer_params(only_first_trace))]
-    })
+    #request(%{
+    #  id: id,
+    #  method: "debug_traceTransaction",
+    #  params: [hash_data, %{timeout: debug_trace_timeout} |> Map.merge(tracer_params(only_first_trace))]
+    #})
   end
 
   defp debug_trace_block_by_number_request({id, block_number}) do
